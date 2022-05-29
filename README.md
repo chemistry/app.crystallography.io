@@ -19,6 +19,11 @@ To package apps for the local platform:
 npm run package
 ```
 
+## How to release application
+
+* Release: ``git tag v0.0.18 &&  git push --tags``
+* Clean: ``git rm tag v0.0.18``
+
 ## Author
 
 [Volodymyr Vreshch](https://vreshch.com)
