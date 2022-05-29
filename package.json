@@ -226,7 +226,8 @@
     "publish": {
       "provider": "github",
       "owner": "chemistry",
-      "repo": "app.crystallography.io"
+      "repo": "app.crystallography.io",
+      "releaseType": "release"
     }
   },
   "devEngines": {
