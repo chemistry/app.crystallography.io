@@ -214,7 +214,6 @@
         "AppImage",
         "snap"
       ],
-      "publish": ["github", "snap"],
       "category": "Science"
     },
     "directories": {

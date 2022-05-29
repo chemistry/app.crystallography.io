@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - name: Checkout git repo
@@ -28,6 +28,14 @@ jobs:
         run: |
           npm install
 
+      - name: Install Snapcraft
+        uses: samuelmeuli/action-snapcraft@v1
+        # Only install Snapcraft on Ubuntu
+        if: startsWith(matrix.os, 'ubuntu')
+        with:
+          # Log in to Snap Store
+          snapcraft_token: ${{ secrets.snapcraft_token }}
+
       - name: Publish releases
         env:
           # This is used for uploading release assets to github
@@ -35,4 +43,4 @@ jobs:
         run: |
           npm run postinstall
           npm run build
-          npm exec electron-builder -- --publish always --win --linux --mac
+          npm exec electron-builder -- --publish always
