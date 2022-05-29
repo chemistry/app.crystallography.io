@@ -1,37 +1,21 @@
 {
-  "description": "A foundation for scalable desktop apps",
+  "name": "structure-search",
+  "version": "0.0.24",
+  "description": "Crystal Structure Search",
   "keywords": [
     "electron",
-    "boilerplate",
-    "react",
-    "typescript",
-    "ts",
-    "sass",
-    "webpack",
-    "hot",
-    "reload"
+    "crystallography",
+    "structure search",
+    "cod",
+    "ccdc"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
-  "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
-  },
+  "homepage": "http://crystallography.io",
+  "repository": "https://github.com/chemistry/crystallography.io",
   "license": "MIT",
   "author": {
-    "name": "Electron React Boilerplate Maintainers",
-    "email": "electronreactboilerplate@gmail.com",
-    "url": "https://electron-react-boilerplate.js.org"
+    "name": "Volodymyr Vreshch",
+    "url": "https://vreshch.com"
   },
-  "contributors": [
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
-    }
-  ],
   "main": "./src/main/main.ts",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
@@ -40,7 +24,6 @@
     "postinstall": "ts-node .erb/scripts/check-native-dep.js && electron-builder install-app-deps && cross-env NODE_ENV=development TS_NODE_TRANSPILE_ONLY=true webpack --config ./.erb/configs/webpack.config.renderer.dev.dll.ts",
     "lint": "cross-env NODE_ENV=development eslint . --ext .js,.jsx,.ts,.tsx",
     "package": "ts-node ./.erb/scripts/clean.js dist && npm run build && electron-builder build --publish never",
-    "prepare": "husky install",
     "rebuild": "electron-rebuild --parallel --types prod,dev,optional --module-dir release/app",
     "start": "ts-node ./.erb/scripts/check-port-in-use.js && npm run start:renderer",
     "start:main": "cross-env NODE_ENV=development electronmon -r ts-node/register/transpile-only .",
@@ -157,7 +140,6 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
@@ -183,8 +165,8 @@
     "webpack-merge": "^5.8.0"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "Structure Search",
+    "appId": "com.vreshch.structure-search",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
@@ -205,7 +187,8 @@
       "hardenedRuntime": true,
       "entitlements": "assets/entitlements.mac.plist",
       "entitlementsInherit": "assets/entitlements.mac.plist",
-      "gatekeeperAssess": false
+      "gatekeeperAssess": false,
+      "category": "public.app-category.education"
     },
     "dmg": {
       "contents": [
@@ -230,7 +213,7 @@
       "target": [
         "AppImage"
       ],
-      "category": "Development"
+      "category": "Science"
     },
     "directories": {
       "app": "release/app",
@@ -242,12 +225,9 @@
     ],
     "publish": {
       "provider": "github",
-      "owner": "electron-react-boilerplate",
-      "repo": "electron-react-boilerplate"
+      "owner": "chemistry",
+      "repo": "app.crystallography.io"
     }
-  },
-  "collective": {
-    "url": "https://opencollective.com/electron-react-boilerplate-594"
   },
   "devEngines": {
     "node": ">=14.x",
