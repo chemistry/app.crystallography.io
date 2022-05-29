@@ -21,8 +21,8 @@ npm run package
 
 ## How to release application
 
-* Release: ``git tag v0.0.18 &&  git push --tags``
-* Clean: ``git rm tag v0.0.18``
+* Release: ``git tag v0.0.25 &&  git push --tags``
+* Clean: ``git tag -d v0.0.25 && git push --delete origin v0.0.25``
 
 ## Author
 
