@@ -29,17 +29,15 @@ jobs:
           npm install
 
       - name: Install Snapcraft
-        uses: samuelmeuli/action-snapcraft@v1
-        # Only install Snapcraft on Ubuntu
         if: startsWith(matrix.os, 'ubuntu')
-        with:
-          # Log in to Snap Store
-          snapcraft_token: ${{ secrets.snapcraft_token }}
+        run: sudo snap install snapcraft --classic && echo "$SNAP_TOKEN" | snapcraft login --with -
+        env:
+          SNAP_TOKEN: ${{ secrets.snapcraft_token }}
 
       - name: Publish releases
         env:
-          # This is used for uploading release assets to github
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}}
+
         run: |
           npm run postinstall
           npm run build
