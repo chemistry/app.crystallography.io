@@ -1,11 +1,10 @@
 {
   "name": "structure-search",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Crystal Structure Search",
   "license": "MIT",
   "author": {
     "name": "Volodymyr Vreshch",
-    "email": "electronreactboilerplate@gmail.com",
     "url": "https://vreshch.com"
   },
   "main": "./dist/main/main.js",
