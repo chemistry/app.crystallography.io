@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
 
     steps:
       - name: Checkout git repo
@@ -38,8 +38,8 @@ jobs:
 
       - name: Publish releases
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run postinstall
           npm run build
-          npm exec electron-builder -- --publish always
+          npm exec electron-builder -- --publish always --linux
