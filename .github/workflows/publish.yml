@@ -30,7 +30,9 @@ jobs:
 
       - name: Install Snapcraft
         if: startsWith(matrix.os, 'ubuntu')
-        run: sudo snap install snapcraft --classic && echo "$SNAP_TOKEN" | snapcraft login --with -
+        run: |
+          sudo snap install snapcraft --classic
+          echo "$SNAP_TOKEN" | snapcraft login --with -
         env:
           SNAP_TOKEN: ${{ secrets.snapcraft_token }}
 
