@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest]
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - name: Checkout git repo
@@ -36,10 +36,29 @@ jobs:
           # Log in to Snap Store
           snapcraft_token: ${{ secrets.snapcraft_token }}
 
-      - name: Publish Releases
+      - name: Publish Ubuntu Releases
+        if: startsWith(matrix.os, 'ubuntu')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run postinstall
           npm run build
-          npm exec electron-builder -- --publish always --linux --win --macos
+          npm exec electron-builder -- --publish always --linux
+
+      - name: Publish Windows Releases
+        if: startsWith(matrix.os, 'win')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run postinstall
+          npm run build
+          npm exec electron-builder -- --publish always --win
+
+      - name: Publish MacOS Releases
+        if: startsWith(matrix.os, 'macos')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm run postinstall
+          npm run build
+          npm exec electron-builder -- --publish always --macos
