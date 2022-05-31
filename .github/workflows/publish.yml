@@ -36,20 +36,10 @@ jobs:
           # Log in to Snap Store
           snapcraft_token: ${{ secrets.snapcraft_token }}
 
-      - name: Publish Ubuntu releases
-        if: startsWith(matrix.os, 'ubuntu')
+      - name: Publish Releases
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run postinstall
           npm run build
-          npm exec electron-builder -- --publish always --linux
-
-      - name: Publish Windows releases
-        if: startsWith(matrix.os, 'win')
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npm run postinstall
-          npm run build
-          npm exec electron-builder -- --publish always --win
+          npm exec electron-builder -- --publish always --linux --win --macos
