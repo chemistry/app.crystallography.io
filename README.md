@@ -3,6 +3,20 @@
 [![Build Status][github-actions-status]][github-actions-url]
 [![Github Tag][github-tag-image]][github-tag-url]
 
+## Install Application
+
+- Linux (require [snapcraft](https://snapcraft.io/) installed)
+
+```bash
+snap install --edge structure-search
+```
+
+- Windows
+Download and install latest version from [here](https://github.com/chemistry/app.crystallography.io/releases)
+
+- Mac OS
+Download and install latest version from [here](https://github.com/chemistry/app.crystallography.io/releases)
+
 ## Starting Development
 
 Start the app in the `dev` environment:
@@ -21,8 +35,8 @@ npm run package
 
 ## How to release application
 
-* Release: ``git tag v0.0.25 &&  git push --tags``
-* Clean: ``git tag -d v0.0.25 && git push --delete origin v0.0.25``
+- Release: ``git tag v0.0.25 &&  git push --tags``
+- Clean: ``git tag -d v0.0.25 && git push --delete origin v0.0.25``
 
 ## Author
 
