@@ -57,14 +57,14 @@ export default class MenuBuilder {
       label: 'Electron',
       submenu: [
         {
-          label: 'About ElectronReact',
+          label: 'About Crystallography Search',
           selector: 'orderFrontStandardAboutPanel:',
         },
         { type: 'separator' },
         { label: 'Services', submenu: [] },
         { type: 'separator' },
         {
-          label: 'Hide ElectronReact',
+          label: 'Hide Crystallography Search',
           accelerator: 'Command+H',
           selector: 'hide:',
         },
@@ -130,6 +130,13 @@ export default class MenuBuilder {
       label: 'View',
       submenu: [
         {
+          label: 'Reload',
+          accelerator: 'Command+R',
+          click: () => {
+            this.mainWindow.webContents.reload();
+          },
+        },
+        {
           label: 'Toggle Full Screen',
           accelerator: 'Ctrl+Command+F',
           click: () => {
@@ -155,29 +162,29 @@ export default class MenuBuilder {
       label: 'Help',
       submenu: [
         {
-          label: 'Learn More',
+          label: 'News ',
           click() {
-            shell.openExternal('https://electronjs.org');
+            shell.openExternal('https://crystallography.io/news');
           },
         },
         {
-          label: 'Documentation',
+          label: 'Report Issue',
           click() {
             shell.openExternal(
-              'https://github.com/electron/electron/tree/main/docs#readme'
+              'https://github.com/chemistry/app.crystallography.io/issues'
             );
           },
         },
         {
-          label: 'Community Discussions',
+          label: 'Contact Us',
           click() {
-            shell.openExternal('https://www.electronjs.org/community');
+            shell.openExternal('https://crystallography.io/contact');
           },
         },
         {
-          label: 'Search Issues',
+          label: 'About',
           click() {
-            shell.openExternal('https://github.com/electron/electron/issues');
+            shell.openExternal('https://crystallography.io/about');
           },
         },
       ],
@@ -197,10 +204,6 @@ export default class MenuBuilder {
       {
         label: '&File',
         submenu: [
-          {
-            label: '&Open',
-            accelerator: 'Ctrl+O',
-          },
           {
             label: '&Close',
             accelerator: 'Ctrl+W',
@@ -242,6 +245,13 @@ export default class MenuBuilder {
               ]
             : [
                 {
+                  label: '&Reload',
+                  accelerator: 'Ctrl+R',
+                  click: () => {
+                    this.mainWindow.webContents.reload();
+                  },
+                },
+                {
                   label: 'Toggle &Full Screen',
                   accelerator: 'F11',
                   click: () => {
@@ -256,29 +266,29 @@ export default class MenuBuilder {
         label: 'Help',
         submenu: [
           {
-            label: 'Learn More',
+            label: 'News ',
             click() {
-              shell.openExternal('https://electronjs.org');
+              shell.openExternal('https://crystallography.io/news');
             },
           },
           {
-            label: 'Documentation',
+            label: 'Report Issue',
             click() {
               shell.openExternal(
-                'https://github.com/electron/electron/tree/main/docs#readme'
+                'https://github.com/chemistry/app.crystallography.io/issues'
               );
             },
           },
           {
-            label: 'Community Discussions',
+            label: 'Contact Us',
             click() {
-              shell.openExternal('https://www.electronjs.org/community');
+              shell.openExternal('https://crystallography.io/contact');
             },
           },
           {
-            label: 'Search Issues',
+            label: 'About',
             click() {
-              shell.openExternal('https://github.com/electron/electron/issues');
+              shell.openExternal('https://crystallography.io/about');
             },
           },
         ],
