@@ -46,3 +46,16 @@ npm run package
 
   This project is licensed under the MIT license, Copyright (c) 2020 Volodymyr Vreshch.
   For more information see [LICENSE.md](https://github.com/chemistry/app.crystallography.io/blob/master/LICENSE.md).
+
+
+[github-actions-status]: https://github.com/chemistry/app.crystallography.io/workflows/Test/badge.svg
+[github-actions-url]: https://github.com/chemistry/app.crystallography.io/actions
+[github-tag-image]: https://img.shields.io/github/v/tag/chemistry/crystallography.io.svg?label=version
+[github-tag-url]: https://github.com/chemistry/app.crystallography.io/releases/latest
+
+
+
+
+
+
+
