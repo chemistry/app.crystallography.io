@@ -13,7 +13,7 @@ import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
-import { resolveHtmlPath } from './util';
+import { resolveDynamicHost, resolveStaticHtmlPath } from './util';
 
 export default class AppUpdater {
   constructor() {
@@ -81,7 +81,10 @@ const createWindow = async () => {
     },
   });
 
-  mainWindow.loadURL(resolveHtmlPath('index.html'));
+  mainWindow.loadURL(resolveDynamicHost());
+  mainWindow.webContents.on('did-fail-load', () => {
+    mainWindow?.loadURL(resolveStaticHtmlPath('index.html'));
+  });
 
   mainWindow.on('ready-to-show', () => {
     if (!mainWindow) {

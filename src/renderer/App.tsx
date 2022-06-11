@@ -1,4 +1,6 @@
-export const UnknownIcon = () => {
+import { useEffect, useState } from 'react';
+
+export const OfflineIcon = () => {
   return (
     <svg
       width="752"
@@ -61,15 +63,76 @@ export const UnknownIcon = () => {
   );
 };
 
-export default function App() {
+const NoResultsButton = () => {
+  const [isOnline, setOnline] = useState(false);
+  const [countDown, setCountDown] = useState(10);
+
+  const navigateAction = () => {
+    window.location.href = 'https://crystallography.io';
+  };
+
+  useEffect(() => {
+    if (isOnline) {
+      return;
+    }
+    if (window.navigator.onLine) {
+      setOnline(true);
+      return;
+    }
+    const listener = () => {
+      setOnline(true);
+    };
+    window.addEventListener('online', listener);
+    // eslint-disable-next-line consistent-return
+    return () => window.removeEventListener('online', listener);
+  }, [isOnline, setOnline]);
+
+  useEffect(() => {
+    if (!isOnline) {
+      return;
+    }
+    const interval = setInterval(() => {
+      if (countDown === 0) {
+        navigateAction();
+        return;
+      }
+      setCountDown(countDown - 1);
+    }, 1000);
+    // eslint-disable-next-line consistent-return
+    return () => clearInterval(interval);
+  }, [countDown, setCountDown, isOnline]);
+
+  const getButtonName = () => {
+    if (!isOnline) {
+      return 'Reload';
+    }
+    if (countDown <= 0) {
+      return `Reloading ...`;
+    }
+    return `Reload in ${countDown}`;
+  };
+
   return (
-    <div>
-      <div className="no-results">
-        <h1 className="no-results_text">Application is Offline</h1>
-        <div className="no-results_icon">
-          <UnknownIcon />
-        </div>
+    <button className="btn btn-active" type="button" onClick={navigateAction}>
+      {getButtonName()}
+    </button>
+  );
+};
+
+export const OfflineApp = () => {
+  return (
+    <div className="no-results">
+      <h1 className="no-results_text">Application is Offline</h1>
+      <div className="no-results_icon">
+        <OfflineIcon />
+      </div>
+      <div className="no-results_button">
+        <NoResultsButton />
       </div>
     </div>
   );
+};
+
+export default function App() {
+  return <OfflineApp />;
 }
