@@ -8,9 +8,9 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
 
-# temporarily disable multi OS tests: macos-latest, windows-latest,
+    # temporarily disable multi OS tests: macos-latest, windows-latest,
 
     steps:
       - name: Check out Git repository
@@ -33,4 +33,5 @@ jobs:
           npm run package
           npm run lint
           npm exec tsc
-          npm test
+
+#         npm test
