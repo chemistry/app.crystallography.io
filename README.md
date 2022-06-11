@@ -4,34 +4,20 @@
 [![Github Tag][github-tag-image]][github-tag-url]
 [![Github Tag][github-license-image]][github-license-url]
 
-## Application
 
 WebVersion: [Crystal Structure Search](http://crystallography.io/)
 
 ![CrystalStructureSearch](https://github.com/chemistry/app.crystallography.io/blob/master/crystal-structure-search-linux.png?raw=true)
 
-Application for Desktop [Download](https://github.com/chemistry/app.crystallography.io/releases)
-Supported platforms:
-
-* Windows
+Download latest installation: 
+* [Windows](https://github.com/chemistry/app.crystallography.io/releases/download/v0.0.40/Structure-Search-Setup-0.0.40.exe)
+* [MaxOS](https://github.com/chemistry/app.crystallography.io/releases/download/v0.0.40/Structure-Search-0.0.40-arm64.dmg)
 * Linux
-* MaxOS
-
-## Install Application
-
-- Linux (require [snapcraft](https://snapcraft.io/) installed)
-
 ```bash
 snap install --edge structure-search
 ```
 
-- Windows
-Download and install latest version from [here](https://github.com/chemistry/app.crystallography.io/releases)
-
-- Mac OS
-Download and install latest version from [here](https://github.com/chemistry/app.crystallography.io/releases)
-
-## Starting Development
+## Development
 
 Start the app in the `dev` environment:
 
@@ -39,7 +25,7 @@ Start the app in the `dev` environment:
 npm start
 ```
 
-## Packaging for Production
+### Packaging for Production
 
 To package apps for the local platform:
 
@@ -47,7 +33,7 @@ To package apps for the local platform:
 npm run package
 ```
 
-## How to release application
+### How to release application
 
 - Release: ``git tag v0.0.25 &&  git push --tags``
 - Clean: ``git tag -d v0.0.25 && git push --delete origin v0.0.25``
