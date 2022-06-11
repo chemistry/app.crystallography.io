@@ -4,6 +4,19 @@
 [![Github Tag][github-tag-image]][github-tag-url]
 [![Github Tag][github-license-image]][github-license-url]
 
+## Application
+
+WebVersion: [Crystal Structure Search](http://crystallography.io/)
+
+![CrystalStructureSearch](https://github.com/chemistry/app.crystallography.io/blob/master/crystal-structure-search-linux.png?raw=true)
+
+Application for Desktop [Download](https://github.com/chemistry/app.crystallography.io/releases)
+Supported platforms:
+
+* Windows
+* Linux
+* MaxOS
+
 ## Install Application
 
 - Linux (require [snapcraft](https://snapcraft.io/) installed)
@@ -48,20 +61,9 @@ npm run package
   This project is licensed under the MIT license, Copyright (c) 2020 Volodymyr Vreshch.
   For more information see [LICENSE.md](https://github.com/chemistry/app.crystallography.io/blob/master/LICENSE.md).
 
-
 [github-actions-status]: https://github.com/chemistry/app.crystallography.io/workflows/Test/badge.svg
 [github-actions-url]: https://github.com/chemistry/app.crystallography.io/actions
 [github-tag-image]: https://img.shields.io/github/v/tag/chemistry/crystallography.io.svg?label=version
 [github-tag-url]: https://github.com/chemistry/app.crystallography.io/releases/latest
 [github-license-image]: https://img.shields.io/github/license/chemistry/crystallography.io
 [github-license-url]: https://github.com/chemistry/app.crystallography.io/blob/master/LICENSE
-
-
-
-
-
-
-
-
-
-
