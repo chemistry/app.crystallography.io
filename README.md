@@ -49,7 +49,7 @@ npm run package
 
 [github-actions-status]: https://github.com/chemistry/app.crystallography.io/workflows/Test/badge.svg
 [github-actions-url]: https://github.com/chemistry/app.crystallography.io/actions
-[github-tag-image]: https://img.shields.io/github/v/tag/chemistry/crystallography.io.svg?label=version
+[github-tag-image]: https://img.shields.io/github/v/tag/chemistry/app.crystallography.io.svg?label=version
 [github-tag-url]: https://github.com/chemistry/app.crystallography.io/releases/latest
 [github-license-image]: https://img.shields.io/github/license/chemistry/crystallography.io
 [github-license-url]: https://github.com/chemistry/app.crystallography.io/blob/master/LICENSE
