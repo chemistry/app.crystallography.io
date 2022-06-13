@@ -4,15 +4,16 @@
 [![Github Tag][github-tag-image]][github-tag-url]
 [![Github Tag][github-license-image]][github-license-url]
 
-
 WebVersion: [Crystal Structure Search](http://crystallography.io/)
 
 ![CrystalStructureSearch](https://github.com/chemistry/app.crystallography.io/blob/master/crystal-structure-search-linux.png?raw=true)
 
-Download latest installation: 
+Download latest installation:
+
 * [Windows](https://github.com/chemistry/app.crystallography.io/releases/download/v0.0.40/Structure-Search-Setup-0.0.40.exe)
 * [MaxOS](https://github.com/chemistry/app.crystallography.io/releases/download/v0.0.40/Structure-Search-0.0.40-arm64.dmg)
 * Linux
+
 ```bash
 snap install --edge structure-search
 ```
@@ -35,8 +36,8 @@ npm run package
 
 ### How to release application
 
-- Release: ``git tag v0.0.25 &&  git push --tags``
-- Clean: ``git tag -d v0.0.25 && git push --delete origin v0.0.25``
+* Release: ``git tag v0.0.25 &&  git push --tags``
+* Clean: ``git tag -d v0.0.25 && git push --delete origin v0.0.25``
 
 ## Author
 

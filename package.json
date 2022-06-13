@@ -10,7 +10,7 @@
     "ccdc"
   ],
   "homepage": "http://crystallography.io",
-  "repository": "https://github.com/chemistry/crystallography.io",
+  "repository": "https://github.com/chemistry/app.crystallography.io",
   "license": "MIT",
   "author": {
     "name": "Volodymyr Vreshch",
